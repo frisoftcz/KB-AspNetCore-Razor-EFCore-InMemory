@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KB_AspNetCore_Razor_EFCore_InMemory.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -15,20 +16,22 @@ namespace KB_AspNetCore_Razor_EFCore_InMemory
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddDbContext<InMemoryDbContext>();
+
+      services.AddMvc();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, InMemoryDbContext context)
     {
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
       }
 
-      app.Run(async (context) =>
-      {
-        await context.Response.WriteAsync("Hello World!");
-      });
+      app.UseMvc();
+
+      context.Seed();
     }
   }
 }
