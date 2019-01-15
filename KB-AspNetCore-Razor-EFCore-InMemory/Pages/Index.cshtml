@@ -1,0 +1,35 @@
+﻿@page
+@model KB_AspNetCore_Razor_EFCore_InMemory.Pages.IndexModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <td>@Html.DisplayNameFor(model => model.entFyzOsoba.ID)</td>
+      <td>@Html.DisplayFor(model => model.entFyzOsoba.ID)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayNameFor(model => model.entFyzOsoba.FYZOSOBA_PRIJMENI )</td>
+      <td>@Html.DisplayFor(model => model.entFyzOsoba.FYZOSOBA_PRIJMENI)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayNameFor(model => model.entFyzOsoba.FYZOSOBA_JMENO)</td>
+      <td>@Html.DisplayFor(model => model.entFyzOsoba.FYZOSOBA_JMENO)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayNameFor(model => model.entFyzOsoba.FYZOSOBA_DATUM_NAROZENI)</td>
+      <td>@Html.DisplayFor(model => model.entFyzOsoba.FYZOSOBA_DATUM_NAROZENI)</td>
+    </tr>
+    <tr>
+      <td>@Html.DisplayNameFor(model => model.entFyzOsoba.POZNAMKA)</td>
+      <td>@Html.DisplayFor(model => model.entFyzOsoba.POZNAMKA)</td>
+    </tr>
+  </table>
+</body>
+</html>
